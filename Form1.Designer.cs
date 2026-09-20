@@ -31,14 +31,14 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            this.txtUnifID = new TextBox();
-            this.txtItemType = new TextBox();
-            this.txtSize = new TextBox();
-            this.txtQty = new TextBox();
+            txtUnifID = new TextBox();
+            txtItemType = new TextBox();
+            txtSize = new TextBox();
+            txtQty = new TextBox();
             label4 = new Label();
-            this.btnAdd = new Button();
-            this.btnUpdate = new Button();
-            this.btnClear = new Button();
+            btnAdd = new Button();
+            btnUpdate = new Button();
+            btnClear = new Button();
             btnDelete = new Button();
             dgforms = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
@@ -80,31 +80,31 @@
             // 
             // txtUnifID
             // 
-            this.txtUnifID.Location = new Point(191, 136);
-            this.txtUnifID.Name = "txtUnifID";
-            this.txtUnifID.Size = new Size(93, 23);
-            this.txtUnifID.TabIndex = 3;
+            txtUnifID.Location = new Point(191, 136);
+            txtUnifID.Name = "txtUnifID";
+            txtUnifID.Size = new Size(93, 23);
+            txtUnifID.TabIndex = 3;
             // 
             // txtItemType
             // 
-            this.txtItemType.Location = new Point(191, 178);
-            this.txtItemType.Name = "txtItemType";
-            this.txtItemType.Size = new Size(93, 23);
-            this.txtItemType.TabIndex = 4;
+            txtItemType.Location = new Point(191, 178);
+            txtItemType.Name = "txtItemType";
+            txtItemType.Size = new Size(93, 23);
+            txtItemType.TabIndex = 4;
             // 
             // txtSize
             // 
-            this.txtSize.Location = new Point(191, 221);
-            this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new Size(93, 23);
-            this.txtSize.TabIndex = 5;
+            txtSize.Location = new Point(191, 221);
+            txtSize.Name = "txtSize";
+            txtSize.Size = new Size(93, 23);
+            txtSize.TabIndex = 5;
             // 
             // txtQty
             // 
-            this.txtQty.Location = new Point(191, 266);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new Size(93, 23);
-            this.txtQty.TabIndex = 6;
+            txtQty.Location = new Point(191, 266);
+            txtQty.Name = "txtQty";
+            txtQty.Size = new Size(93, 23);
+            txtQty.TabIndex = 6;
             // 
             // label4
             // 
@@ -117,30 +117,31 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new Point(105, 319);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new Size(80, 33);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Location = new Point(105, 319);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(80, 33);
+            btnAdd.TabIndex = 8;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new Point(102, 356);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new Size(80, 31);
-            this.btnUpdate.TabIndex = 9;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Location = new Point(102, 356);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(80, 31);
+            btnUpdate.TabIndex = 9;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new Point(196, 319);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new Size(88, 31);
-            this.btnClear.TabIndex = 10;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            btnClear.Location = new Point(196, 319);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(88, 31);
+            btnClear.TabIndex = 10;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
@@ -212,14 +213,14 @@
             Controls.Add(label5);
             Controls.Add(dgforms);
             Controls.Add(btnDelete);
-            Controls.Add(this.btnClear);
-            Controls.Add(this.btnUpdate);
-            Controls.Add(this.btnAdd);
+            Controls.Add(btnClear);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnAdd);
             Controls.Add(label4);
-            Controls.Add(this.txtQty);
-            Controls.Add(this.txtSize);
-            Controls.Add(this.txtItemType);
-            Controls.Add(this.txtUnifID);
+            Controls.Add(txtQty);
+            Controls.Add(txtSize);
+            Controls.Add(txtItemType);
+            Controls.Add(txtUnifID);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
