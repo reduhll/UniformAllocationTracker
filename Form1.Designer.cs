@@ -40,14 +40,14 @@
             this.btnUpdate = new Button();
             this.btnClear = new Button();
             btnDelete = new Button();
-            dataGridView1 = new DataGridView();
+            dgforms = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             ItemType = new DataGridViewTextBoxColumn();
             Size = new DataGridViewTextBoxColumn();
             Qty = new DataGridViewTextBoxColumn();
             label5 = new Label();
             label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgforms).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -151,15 +151,15 @@
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgforms
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, ItemType, Size, Qty });
-            dataGridView1.Location = new Point(306, 129);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(466, 258);
-            dataGridView1.TabIndex = 12;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgforms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgforms.Columns.AddRange(new DataGridViewColumn[] { ID, ItemType, Size, Qty });
+            dgforms.Location = new Point(306, 129);
+            dgforms.Name = "dgforms";
+            dgforms.Size = new Size(466, 258);
+            dgforms.TabIndex = 12;
+            dgforms.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ID
             // 
@@ -210,7 +210,7 @@
             ClientSize = new Size(835, 451);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgforms);
             Controls.Add(btnDelete);
             Controls.Add(this.btnClear);
             Controls.Add(this.btnUpdate);
@@ -225,7 +225,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgforms).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,16 +235,16 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtUnifID;
+        private TextBox txtItemType;
+        private TextBox txtSize;
+        private TextBox txtQty;
         private Label label4;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnAdd;
+        private Button btnClear;
+        private Button btnUpdate;
         private Button btnDelete;
-        private DataGridView dataGridView1;
+        private DataGridView dgforms;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn ItemType;
         private DataGridViewTextBoxColumn Size;
