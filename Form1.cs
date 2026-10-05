@@ -91,27 +91,61 @@ namespace UniformAllocationTracker
         {
             if (txtUnifID.Text == "" || txtItemType.Text == "" ||
                 txtSize.Text == "" || txtQty.Text == "")
-                //if selected is empty, user is required to refill fields
+            //if selected is empty, user is required to refill fields
             {
                 MessageBox.Show("Please Select Record and Complete Fields..");
                 return;
             }
 
-                int uniformID;
-                int quantity;
+            int uniformID;
+            int quantity;
 
-                if (!int.TryParse(txtUnifID.Text, out uniformID) || !int.TryParse(txtQty.Text, out quantity))
-                {
-                    MessageBox.Show("Quantity input is invalid. Pls Try Again!");
-                    return;
-                }
+            if (!int.TryParse(txtUnifID.Text, out uniformID) || !int.TryParse(txtQty.Text, out quantity))
+            {
+                MessageBox.Show("Quantity input is invalid. Pls Try Again!");
+                return;
+            }
 
-                UniformDatabase.UpdateUniform(
-                    uniformID, txtItemType.Text, txtSize.Text, quantity);
+            UniformDatabase.UpdateUniform(
+                uniformID, txtItemType.Text, txtSize.Text, quantity);
+            LoadUniforms();
+
+            MessageBox.Show("Success! Uniform Information is Updated!");
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(txtUnifID.Text == "")
+            {
+                MessageBox.Show("Please Select Uniform to Delete!");
+                return;
+
+            }
+
+            int uniformID;
+
+            if(!int.TryParse(txtUnifID.Text, out uniformID))
+            {
+                MessageBox.Show("INVALID UNIFORM ID. PLEASE TRY AGAIN");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure you want to DELETE this uniform?", 
+                "CONFIRM DELETION", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes) {
+                UniformDatabase.DeleteUniform(uniformID);
+                
                 LoadUniforms();
 
-                MessageBox.Show("Success! Uniform Information is Updated!");
-            
+                txtUnifID.Clear();
+                txtItemType.Clear();
+                txtSize.Clear();
+                txtQty.Clear();
+
+                MessageBox.Show("Success! Uniform is Deleted");
+            }
         }
     }
 }

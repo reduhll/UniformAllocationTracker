@@ -81,6 +81,29 @@ namespace UniformAllocationTracker
 			}
 		}
 
+		public static void DeleteUniform(int uniformID)
+		{
+			using (SQLiteConnection connection = 
+				new SQLiteConnection(connectionString))
+			{
+
+                connection.Open();
+                //Deleting Function 
+                string sql = "DELETE FROM UniformItems WHERE UniformID = @ID";
+
+
+                using (SQLiteCommand command
+                    = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@ID", uniformID);
+
+                    command.ExecuteNonQuery();
+                }
+
+            }
+
+		}
+
 		public static DataTable GetUniforms()
 		{
 			DataTable table = new DataTable();
