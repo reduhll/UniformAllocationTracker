@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace UniformAllocationTracker
 {
     public partial class Form1 : Form
@@ -46,20 +48,30 @@ namespace UniformAllocationTracker
             {
                 MessageBox.Show("Quantity must be a number.");
                 return;
+
+
             }
-            UniformDatabase.AddUniform(
+            try
+            {
+                UniformDatabase.AddUniform(
                 txtItemType.Text, txtSize.Text, quantity);
 
-            LoadUniforms();
+                LoadUniforms();
 
 
 
-            MessageBox.Show("Uniform Added Successfully!!!");
-            //once uniform is added, form will automatically clear for next one
-            txtItemType.Clear();
-            txtSize.Clear();
-            txtQty.Clear();
-        }
+                MessageBox.Show("Uniform Added Successfully!!!");
+                //once uniform is added, form will automatically clear for next one
+                txtItemType.Clear();
+                txtSize.Clear();
+                txtQty.Clear();
+            }
+            catch (Exception ex) { 
+             MessageBox.Show("ERROR occured: " +ex.Message);
+            }
+           
+        } 
+     
 
         //clears the input field after clicking button clear
         private void btnClear_Click(object sender, EventArgs e)
