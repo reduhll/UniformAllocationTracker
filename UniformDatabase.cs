@@ -56,6 +56,31 @@ namespace UniformAllocationTracker
 			}
 
 		}
+		//UPDATING uniform function
+		public static void UpdateUniform (int uniformID, string itemType, string size, int quantity)
+		{
+			using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+			{
+				connection.Open();
+				string sql = @"UPDATE UniformItems SET ItemType = @ItemType, 
+                Size = @Size, AvailQuantity = @Qty WHERE UniformID = @ID";
+				using (SQLiteCommand command = new SQLiteCommand (sql, connection))
+				{
+					command.Parameters.AddWithValue("@ItemType", itemType);
+
+					command.Parameters.AddWithValue("@Size", size);
+
+					command.Parameters.AddWithValue("@Qty", quantity);
+
+					command.Parameters.AddWithValue("@ID", uniformID);
+
+                    command.ExecuteNonQuery();
+
+
+                }
+			}
+		}
+
 		public static DataTable GetUniforms()
 		{
 			DataTable table = new DataTable();

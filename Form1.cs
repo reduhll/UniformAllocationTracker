@@ -61,6 +61,7 @@ namespace UniformAllocationTracker
             txtQty.Clear();
         }
 
+        //clears the input field after clicking button clear
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtItemType.Clear();
@@ -70,7 +71,7 @@ namespace UniformAllocationTracker
             txtItemType.Focus();
         }
 
-        //clear click
+        //Data will show on input field once table data is pressed
         private void dgforms_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -82,6 +83,35 @@ namespace UniformAllocationTracker
                 txtSize.Text = row.Cells["colSize"].Value?.ToString();
                 txtQty.Text = row.Cells["colQty"].Value?.ToString();
             }
+        }
+
+        //Updating fields
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtUnifID.Text == "" || txtItemType.Text == "" ||
+                txtSize.Text == "" || txtQty.Text == "")
+                //if selected is empty, user is required to refill fields
+            {
+                MessageBox.Show("Please Select Record and Complete Fields..");
+                return;
+            }
+
+                int uniformID;
+                int quantity;
+
+                if (!int.TryParse(txtUnifID.Text, out uniformID) || !int.TryParse(txtQty.Text, out quantity))
+                {
+                    MessageBox.Show("Quantity input is invalid. Pls Try Again!");
+                    return;
+                }
+
+                UniformDatabase.UpdateUniform(
+                    uniformID, txtItemType.Text, txtSize.Text, quantity);
+                LoadUniforms();
+
+                MessageBox.Show("Success! Uniform Information is Updated!");
+            
         }
     }
 }
