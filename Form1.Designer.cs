@@ -41,10 +41,10 @@
             btnClear = new Button();
             btnDelete = new Button();
             dgforms = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            ItemType = new DataGridViewTextBoxColumn();
-            Size = new DataGridViewTextBoxColumn();
-            Qty = new DataGridViewTextBoxColumn();
+            colID = new DataGridViewTextBoxColumn();
+            colItemType = new DataGridViewTextBoxColumn();
+            colSize = new DataGridViewTextBoxColumn();
+            colQty = new DataGridViewTextBoxColumn();
             label5 = new Label();
             label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgforms).BeginInit();
@@ -82,8 +82,10 @@
             // 
             txtUnifID.Location = new Point(191, 136);
             txtUnifID.Name = "txtUnifID";
+            txtUnifID.ReadOnly = true;
             txtUnifID.Size = new Size(93, 23);
             txtUnifID.TabIndex = 3;
+            txtUnifID.TabStop = false;
             // 
             // txtItemType
             // 
@@ -142,6 +144,7 @@
             btnClear.TabIndex = 10;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -155,32 +158,36 @@
             // dgforms
             // 
             dgforms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgforms.Columns.AddRange(new DataGridViewColumn[] { ID, ItemType, Size, Qty });
+            dgforms.Columns.AddRange(new DataGridViewColumn[] { colID, colItemType, colSize, colQty });
             dgforms.Location = new Point(306, 129);
             dgforms.Name = "dgforms";
             dgforms.Size = new Size(466, 258);
             dgforms.TabIndex = 12;
             dgforms.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // ID
+            // colID
             // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
+            colID.DataPropertyName = "UniformID";
+            colID.HeaderText = "ID";
+            colID.Name = "colID";
             // 
-            // ItemType
+            // colItemType
             // 
-            ItemType.HeaderText = "ItemType";
-            ItemType.Name = "ItemType";
+            colItemType.DataPropertyName = "ItemType";
+            colItemType.HeaderText = "ItemType";
+            colItemType.Name = "colItemType";
             // 
-            // Size
+            // colSize
             // 
-            Size.HeaderText = "Size";
-            Size.Name = "Size";
+            colSize.DataPropertyName = "Size";
+            colSize.HeaderText = "Size";
+            colSize.Name = "colSize";
             // 
-            // Qty
+            // colQty
             // 
-            Qty.HeaderText = "Qty Avail";
-            Qty.Name = "Qty";
+            colQty.DataPropertyName = "AvailQuantity";
+            colQty.HeaderText = "Qty Avail";
+            colQty.Name = "colQty";
             // 
             // label5
             // 
@@ -246,11 +253,11 @@
         private Button btnUpdate;
         private Button btnDelete;
         private DataGridView dgforms;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn ItemType;
-        private DataGridViewTextBoxColumn Size;
-        private DataGridViewTextBoxColumn Qty;
         private Label label5;
         private Label label6;
+        private DataGridViewTextBoxColumn colID;
+        private DataGridViewTextBoxColumn colItemType;
+        private DataGridViewTextBoxColumn colSize;
+        private DataGridViewTextBoxColumn colQty;
     }
 }

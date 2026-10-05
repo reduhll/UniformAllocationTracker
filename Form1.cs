@@ -8,21 +8,17 @@ namespace UniformAllocationTracker
 
             UniformDatabase.InitializeDatabase();
 
-            ID.DataPropertyName = "UniformID";
+
 
             dgforms.AutoGenerateColumns = false;
 
-            LoadUniforms(); 
+            LoadUniforms();
 
-        
+
         }
         private void LoadUniforms()
         {
             dgforms.DataSource = UniformDatabase.GetUniforms();
-        }
-        private void BtnAdd_Click(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
 
@@ -46,7 +42,7 @@ namespace UniformAllocationTracker
             }
 
             int quantity;
-            if(!int.TryParse(txtQty.Text, out quantity))
+            if (!int.TryParse(txtQty.Text, out quantity))
             {
                 MessageBox.Show("Quantity must be a number.");
                 return;
@@ -59,10 +55,19 @@ namespace UniformAllocationTracker
 
 
             MessageBox.Show("Uniform Added Successfully!!!");
-
+            //once uniform is added, form will automatically clear for next one
             txtItemType.Clear();
             txtSize.Clear();
             txtQty.Clear();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtItemType.Clear();
+            txtSize.Clear();
+            txtQty.Clear();
+            txtUnifID.Clear();
+            txtItemType.Focus();
         }
     }
 }
