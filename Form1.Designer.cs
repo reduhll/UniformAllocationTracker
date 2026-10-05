@@ -163,6 +163,7 @@
             dgforms.Name = "dgforms";
             dgforms.Size = new Size(466, 258);
             dgforms.TabIndex = 12;
+            dgforms.CellClick += dgforms_CellClick;
             dgforms.CellContentClick += dataGridView1_CellContentClick;
             // 
             // colID

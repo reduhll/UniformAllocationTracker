@@ -69,5 +69,19 @@ namespace UniformAllocationTracker
             txtUnifID.Clear();
             txtItemType.Focus();
         }
+
+        //clear click
+        private void dgforms_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgforms.Rows[e.RowIndex];
+
+                txtUnifID.Text = row.Cells["colID"].Value?.ToString();
+                txtItemType.Text = row.Cells["colItemType"].Value?.ToString();
+                txtSize.Text = row.Cells["colSize"].Value?.ToString();
+                txtQty.Text = row.Cells["colQty"].Value?.ToString();
+            }
+        }
     }
 }
